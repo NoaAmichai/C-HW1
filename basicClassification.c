@@ -1,30 +1,24 @@
-
-
 #include <stdio.h>
+#include <math.h>
 
-
-int isPrime(int num){
-    for(i=2;i<num;i++){
-        if (num%i==0){
-            return 0;
-        }
+int isPrime(int n) {
+    if (n < 1) return 0;
+    for (int i = 1; i <= sqrt(n); i++) {
+        if ((n% i) == 0) return 0;
     }
     return 1;
 }
 
-int isStrong(int num){
-    int endOfNum,powerSum=1,numSum=0,temp=num;
-    while(temp!=0){
-        endOfNum=temp%10;
-        for(i=1;i<=endOfNum;i++){
-            powerSum=powerSum*i;
+
+int isStrong(int n) {
+    int fact, i, j, tempNum, sum = 0;
+    for (i = n; n > 0; n /= 10) {
+        fact = 1;
+        tempNum = n % 10;
+        for (j = 1; j <= tempNum; j++) {
+            fact *= j;
         }
-        numSum+=powerSum;
-        powerSum=1;
-        temp=temp/10;
+        sum += fact;
     }
-    if(num==numSum) {
-        return 1;
-    }
-    return 0;
+    return sum == n ? 1 : 0;
 }
