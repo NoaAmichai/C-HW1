@@ -22,26 +22,25 @@ int PalindromeRec(int num, int size) {
     }
 
 }
-
-int isArmstrong(int num) {
-    int size,temp=num,sum=0;
-    size = NumLen(num);
-    while (temp>0){
-        sum+=powf(temp%10);
-        temp=temp/10;
-    }
-    if(num==sum){
-        return 1;
-    }else{
+//Olen=Original length
+int ArmRec(int num, int len, int Olen) {
+    if (len == 0) {
         return 0;
     }
+    return ArmRec(num / 10, len - 1,Olen) + powf(num % 10, Olen);
+}
+
+int isArmstrong(int num) {
+    int len;
+    len = NumLen(num);
+    return (ArmRec(num, len, len) == num) ? 1 : 0;
+
 }
 
 
 int isPalindrome(int num) {
-    int len = 0;
+    int len;
     len = NumLen(num);
-
     return PalindromeRec(num, len);
 }
 
