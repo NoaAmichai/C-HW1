@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "NumClass.h"
-#include <"math.h">
+#include "NumClaas.h"
+#include <math.h>
 
 int main() {
 

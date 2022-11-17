@@ -1,3 +1,4 @@
+
 int isArmstrong(int);
 
 /*will return if a number is a palindrome*/
