@@ -1,7 +1,5 @@
 CC=gcc
 AR=ar
-OBJECTS_MAIN=main.o
-OBJECTS_LIB=mylib.o
 FLAGS= -Wall -g
 BASIC = basicClassification.o
 LOOPS=advancedClassificationLoop.o
@@ -64,7 +62,7 @@ main.o: main.c NumClass.h
 .PHONY: clean all
 
 clean:
-	rm -f *.o *.a *.so progmains progmaind
+	rm -f *.o *.a *.so 
 
 
 #all: libmylib.so libmylib.a progmains progmaind

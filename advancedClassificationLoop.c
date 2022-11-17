@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include "NumClaas.h"
+
 int isArmstrong(int n) {
     int sum = 0, temp = n, countLen = 0;
     while (temp > 0) { //count the length of n
