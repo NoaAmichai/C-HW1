@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-
+#include "NumClaas.h"
 int isPrime(int num) {
     if (num < 1) { return 0; }
     for (int i = 1; i < sqrt(num); i++) {
@@ -15,7 +15,7 @@ int isStrong(int num) {
     int endOfNum, powerSum = 1, numSum = 0, temp = num;
     while (temp != 0) {
         endOfNum = temp % 10;
-        for (i = 1; i <= endOfNum; i++) {
+        for (int i = 1; i <= endOfNum; i++) {
             powerSum = powerSum * i;
         }
         numSum += powerSum;
