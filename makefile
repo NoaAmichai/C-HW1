@@ -5,7 +5,7 @@ BASIC = basicClassification.o
 LOOPS=advancedClassificationLoop.o
 RECURSION=advancedClassificationRecursion.o
 
-all:loops recursives loopd recursived mains maindloop maindrec
+all: recursives loops loopd recursived mains maindloop maindrec
 
 loopd: libclassloops.so
 loops: libclassloops.a
@@ -33,7 +33,7 @@ advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
 	$(CC) $(FLAGS) -c advancedClassificationLoop.c
 
 basicClassification.o: basicClassification.c NumClass.h
-	$(CC) $(FLAGS) -c basicClassification.c
+	$(CC) $(FLAGS) -c basicClassification.c 
 
 #creat mains
 
@@ -48,7 +48,7 @@ basicClassification.o: basicClassification.c NumClass.h
 #	$(CC) -shared -o libclassloops.so $(BASIC) $(LOOPS)
 
 mains: main.o recursives.a
-	$(CC) $(FLAGE) -o mains main.o recursives.a
+	$(CC) $(FLAGE) -o mains main.o ./recursives.a
 
 maindloop: main.o libclassloops.so
 	$(CC) $(FLAGE) -o maindloop main.o ./libclassloops.so
