@@ -5,7 +5,7 @@
 int main()
 {
     int firstNum, secondNum;
-    scanf("%d%d", &firstNum, &secondNum);
+    scanf("%d%d/n", &firstNum, &secondNum);
     for (int i = firstNum; i <= secondNum; i++)
     {
         if (isPrime(i))

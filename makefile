@@ -1,26 +1,28 @@
 CC=gcc
 AR=ar
-FLAGS= -Wall -g
+FLAGS = -Wall -g
 BASIC = basicClassification.o
-LOOPS=advancedClassificationLoop.o
-RECURSION=advancedClassificationRecursion.o
+LOOPS = advancedClassificationLoop.o
+RECURSION = advancedClassificationRecursion.o
 
 all: recursives loops loopd recursived mains maindloop maindrec
 
 loopd: libclassloops.so
-loops: libclassloops.a
-recursives: recursives.a
 recursived: libclassrec.so
+loops: libclassloops.a
+recursives: librecursives.a
 
 # creat lib
-recursives.a: $(BASIC) $(RECURSION)
+librecursives.a: $(BASIC) $(RECURSION)
 	$(AR) -rcs libclassrec.a $(BASIC) $(RECURSION)
+	ranlib libclassrec.a
 
 libclassrec.so: $(BASIC) $(RECURSION)
 	$(CC) -shared -o libclassrec.so $(BASIC) $(RECURSION)
 
 libclassloops.a: $(BASIC) $(LOOPS)
 	$(AR) -rcs libclassloops.a $(BASIC) $(LOOPS)
+	ranlib libclassloops.a
 
 libclassloops.so: $(BASIC) $(RECURSION)
 	$(CC) -shared -o libclassloops.so $(BASIC) $(RECURSION)
@@ -33,7 +35,8 @@ advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
 	$(CC) $(FLAGS) -c advancedClassificationLoop.c
 
 basicClassification.o: basicClassification.c NumClass.h
-	$(CC) $(FLAGS) -c basicClassification.c 
+	$(CC) $(FLAGS) -c basicClassification.c
+
 
 #creat mains
 
@@ -48,7 +51,7 @@ basicClassification.o: basicClassification.c NumClass.h
 #	$(CC) -shared -o libclassloops.so $(BASIC) $(LOOPS)
 
 mains: main.o recursives.a
-	$(CC) $(FLAGE) -o mains main.o ./recursives.a
+	$(CC) $(FLAGE) -o mains main.o recursives.a
 
 maindloop: main.o libclassloops.so
 	$(CC) $(FLAGE) -o maindloop main.o ./libclassloops.so
@@ -59,10 +62,10 @@ maindrec: main.o libclassrec.so
 main.o: main.c NumClass.h
 	$(CC) $(FLAGS) -c main.c
 
-.PHONY: clean all
+.PHONY: clean loops recursives recursived loopd all
 
 clean:
-	rm -f *.o *.a *.so 
+	rm -f *.o *.a *.so mains maindrec maindloop	
 
 
 #all: libmylib.so libmylib.a progmains progmaind
