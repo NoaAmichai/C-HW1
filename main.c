@@ -12,14 +12,14 @@ int main()
         {
             printf("%d ", i);
         }
-    }
+    }printf("/n");
 
     for (int i = firstNum; i <= secondNum; i++)
     {
         if (isArmstrong(i))
         {
             printf("%d ", i);
-        }
+        }printf("/n");
     }
 
     for (int i = firstNum; i <= secondNum; i++)
@@ -27,7 +27,7 @@ int main()
         if (isStrong(i))
         {
             printf("%d ", i);
-        }
+        }printf("/n");
     }
 
     for (int i = firstNum; i <= secondNum; i++)
