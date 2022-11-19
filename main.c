@@ -19,16 +19,16 @@ int main()
         if (isArmstrong(i))
         {
             printf("%d ", i);
-        }printf("/n");
-    }
+        }
+    }printf("/n");
 
     for (int i = firstNum; i <= secondNum; i++)
     {
         if (isStrong(i))
         {
             printf("%d ", i);
-        }printf("/n");
-    }
+        }
+    }printf("/n");
 
     for (int i = firstNum; i <= secondNum; i++)
     {

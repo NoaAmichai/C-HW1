@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-
+#include "NumClaas.h"
 int NumLen(int n)
 {
     int counter = 0;

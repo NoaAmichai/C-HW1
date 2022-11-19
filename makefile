@@ -7,9 +7,9 @@ RECURSION = advancedClassificationRecursion.o
 NUM_H = NumClass.h
 MAIN_O = main.o
 
-.PHONY: clean loops recursives recursived loopd all
+.PHONY: all clean loops recursives recursived loopd 
 
-all: loops recursives recursived loopd mains maindloop maindrec $(MAIN_O)
+all:loops recursives recursived loopd mains maindloop maindrec $(MAIN_O)
 
 loops: libclassloops.a
 recursives: libclassrec.a
