@@ -13,7 +13,7 @@ int NumLen(int n)
 {
     int counter = 0;
     int temp = n;
-    while (n > 0)
+    while (temp > 0)
     {
         temp = temp / 10;
         counter++;

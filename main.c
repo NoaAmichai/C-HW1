@@ -4,14 +4,15 @@
 int main()
 {
     int firstNum, secondNum;
-    scanf("%d%d/n", &firstNum, &secondNum);
+    scanf("%d", &firstNum);
+    scanf("%d", &secondNum);
     for (int i = firstNum; i <= secondNum; i++)
     {
         if (isPrime(i))
         {
             printf("%d ", i);
         }
-    }printf("/n");
+    }printf("\n");
 
     for (int i = firstNum; i <= secondNum; i++)
     {
@@ -19,7 +20,7 @@ int main()
         {
             printf("%d ", i);
         }
-    }printf("/n");
+    }printf("\n");
 
     for (int i = firstNum; i <= secondNum; i++)
     {
@@ -27,7 +28,7 @@ int main()
         {
             printf("%d ", i);
         }
-    }printf("/n");
+    }printf("\n");
 
     for (int i = firstNum; i <= secondNum; i++)
     {
@@ -36,6 +37,7 @@ int main()
             printf("%d ", i);
         }
     }
+    printf("\n");
 
     return 0;
 }

@@ -8,7 +8,7 @@ MAIN_O = main.o
 
 .PHONY: all clean loops recursives recursived loopd 
 
-all:loops recursives recursived loopd mains maindloop maindrec $(MAIN_O)
+all:loops recursives recursived loopd mains maindloop maindrec
 
 loops: libclassloops.a
 recursives: libclassrec.a
@@ -17,18 +17,18 @@ loopd: libclassloops.so
 
 #Create lib
 
-libclassloops.a: $(BASIC) $(LOOP)
+libclassloops.a: $(LOOP)
 	$(AR) -rcs libclassloops.a $(LOOP)
 	ranlib libclassloops.a
 
-libclassrec.a: $(BASIC) $(RECURSION)
+libclassrec.a: $(RECURSION)
 	$(AR) -rcs libclassrec.a $(RECURSION)
 	ranlib libclassrec.a
 
-libclassrec.so:$(BASIC) $(RECURSION)
+libclassrec.so:$(RECURSION)
 	$(CC) -shared -o libclassrec.so $(RECURSION)
 	
-libclassloops.so: $(BASIC) $(LOOP)
+libclassloops.so: $(LOOP)
 	$(CC) -shared -o libclassloops.so $(LOOP)
 
 #Create o files
