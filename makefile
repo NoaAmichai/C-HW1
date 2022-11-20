@@ -19,11 +19,11 @@ loopd: libclassloops.so
 
 libclassloops.a: $(LOOP)
 	$(AR) -rcs libclassloops.a $(LOOP)
-	ranlib libclassloops.a
+	#ranlib libclassloops.a
 
 libclassrec.a: $(RECURSION)
 	$(AR) -rcs libclassrec.a $(RECURSION)
-	ranlib libclassrec.a
+	#ranlib libclassrec.a
 
 libclassrec.so:$(RECURSION)
 	$(CC) -shared -o libclassrec.so $(RECURSION)
