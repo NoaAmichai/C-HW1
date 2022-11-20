@@ -2,6 +2,8 @@
     "files.associations": {
         "numclaas.h": "c",
         "math.h": "c",
-        "numclass.h": "c"
-    }
+        "numclass.h": "c",
+        "stdio.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
