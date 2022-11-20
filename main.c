@@ -4,8 +4,7 @@
 int main()
 {
     int firstNum, secondNum;
-    scanf("%d", &firstNum);
-    scanf("%d", &secondNum);
+    scanf("%d %d", &firstNum,&secondNum);
     for (int i = firstNum; i <= secondNum; i++)
     {
         if (isPrime(i))
