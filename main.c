@@ -5,38 +5,39 @@ int main()
 {
     int firstNum, secondNum;
     scanf("%d %d", &firstNum,&secondNum);
-    for (int i = firstNum; i <= secondNum; i++)
-    {
-        if (isPrime(i))
-        {
-            printf("%d ", i);
-        }
-    }printf("\n");
-
+    printf("The Armstrong numbers are:");
     for (int i = firstNum; i <= secondNum; i++)
     {
         if (isArmstrong(i))
         {
-            printf("%d ", i);
+            printf(" %d", i);
         }
-    }printf("\n");
-
-    for (int i = firstNum; i <= secondNum; i++)
-    {
-        if (isStrong(i))
-        {
-            printf("%d ", i);
-        }
-    }printf("\n");
-
+    }
+    printf("\nThe Palindrome are:");
     for (int i = firstNum; i <= secondNum; i++)
     {
         if (isPalindrome(i))
         {
-            printf("%d ", i);
+            printf(" %d", i);
         }
     }
-    printf("\n");
+    printf("\nThe Prime numbers are:");
+    for (int i = firstNum; i <= secondNum; i++)
+    {
+        if (isPrime(i))
+        {
+            printf(" %d", i);
+        }
+    }
+
+    printf("\nThe Strong numbers are:");
+    for (int i = firstNum; i <= secondNum; i++)
+    {
+        if (isStrong(i))
+        {
+            printf(" %d", i);
+        }
+    }
 
     return 0;
 }
