@@ -1,7 +1,14 @@
 #include <stdio.h>
-#include <math.h>
-#include "NumClaas.h"
+#include "NumClass.h"
 
+
+int power(int num ,int exp){
+    int sum=1;
+    for (int i=0;i<exp;i++){
+        sum*=num;
+    }
+    return sum;
+}
 int isArmstrong(int n)
 {
     int sum = 0, temp = n, countLen = 0;
@@ -13,13 +20,13 @@ int isArmstrong(int n)
     temp = n;
     while (temp > 0)
     {
-        sum += pow(temp % 10, countLen);
+        sum += power(temp % 10, countLen);
         temp /= 10;
     }
     return sum == n ? 1 : 0;
 }
 
-isPalindrome(int num)
+int isPalindrome(int num)
 {
     int temp = num, numSum = 0;
 

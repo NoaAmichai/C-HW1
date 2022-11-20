@@ -1,6 +1,14 @@
 #include <stdio.h>
-#include <math.h>
-#include "NumClaas.h"
+#include "NumClass.h"
+
+int power(int num ,int exp){
+    int sum=1;
+    for (int i=0;i<exp;i++){
+        sum*=num;
+    }
+    return sum;
+}
+
 int NumLen(int n)
 {
     int counter = 0;
@@ -19,7 +27,7 @@ int PalindromeRec(int num, int size)
     {
         return 1;
     }
-    int numOfZeros = powf(10, size - 1);
+    int numOfZeros = power(10, size - 1);
     if ((num / numOfZeros) == (num % 10))
     {
         return PalindromeRec(((num % numOfZeros) / 10), size - 2);
@@ -38,7 +46,7 @@ int ArmRec(int num, int len, int Olen)
     {
         return 0;
     }
-    return ArmRec(num / 10, len - 1, Olen) + powf(num % 10, Olen);
+    return ArmRec(num / 10, len - 1, Olen) + power(num % 10, Olen);
 }
 
 int isArmstrong(int num)

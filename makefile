@@ -1,9 +1,8 @@
 CC =gcc
 AR =ar
 FLAGS = -Wall -g
-BASIC = basicClassification.o
-LOOP = advancedClassificationLoop.o
-RECURSION = advancedClassificationRecursion.o
+LOOP = advancedClassificationLoop.o basicClassification.o
+RECURSION = advancedClassificationRecursion.o basicClassification.o
 NUM_H = NumClass.h
 MAIN_O = main.o
 
@@ -19,31 +18,31 @@ loopd: libclassloops.so
 #Create lib
 
 libclassloops.a: $(BASIC) $(LOOP)
-	$(AR) -rcs libclassloops.a $(BASIC) $(LOOP)
+	$(AR) -rcs libclassloops.a $(LOOP)
 	ranlib libclassloops.a
 
 libclassrec.a: $(BASIC) $(RECURSION)
-	$(AR) -rcs libclassrec.a $(BASIC) $(RECURSION)
+	$(AR) -rcs libclassrec.a $(RECURSION)
 	ranlib libclassrec.a
 
 libclassrec.so:$(BASIC) $(RECURSION)
-	$(CC) -shared -o libclassrec.so $(BASIC) $(RECURSION)
+	$(CC) -shared -o libclassrec.so $(RECURSION)
 	
 libclassloops.so: $(BASIC) $(LOOP)
-	$(CC) -shared -o libclassloops.so $(BASIC) $(LOOP)
+	$(CC) -shared -o libclassloops.so $(LOOP)
 
 #Create o files
 
 $(MAIN_O): main.c $(NUM_H)
 	$(CC) $(FLAGS) -c main.c
 
-$(BASIC): basicClassification.c $(NUM_H)
+basicClassification.o: basicClassification.c $(NUM_H)
 	$(CC) $(FLAGS) -c basicClassification.c
 
-$(LOOP): advancedClassificationLoop.c $(NUM_H)
+advancedClassificationLoop.o: advancedClassificationLoop.c $(NUM_H)
 	$(CC) $(FLAGS) -c advancedClassificationLoop.c
 
-$(RECURSION): advancedClassificationRecursion.c $(NUM_H)
+advancedClassificationRecursion.o: advancedClassificationRecursion.c $(NUM_H)
 	$(CC) $(FLAGS) -c advancedClassificationRecursion.c
 
 #Create mains

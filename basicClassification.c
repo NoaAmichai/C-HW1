@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <math.h>
-#include "NumClaas.h"
+#include "NumClass.h"
 
 int isPrime(int num)
 {
@@ -10,7 +9,7 @@ int isPrime(int num)
     }
     else
     {
-        for (int i = 1; i < sqrt(num); i++)
+        for (int i = 1; i < (num/2); i++)
         {
             if (num % i == 0)
             {
