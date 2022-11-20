@@ -4,7 +4,8 @@
 int main()
 {
     int firstNum, secondNum;
-    scanf("%d %d", &firstNum,&secondNum);
+    scanf("%d", &firstNum);
+    scanf("%d", &secondNum);
     printf("The Armstrong numbers are:");
     for (int i = firstNum; i <= secondNum; i++)
     {
