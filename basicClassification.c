@@ -22,6 +22,9 @@ int isPrime(int num)
 
 int isStrong(int num)
 {
+    if (num==0){
+        return 0;
+    }
     int endOfNum, powerSum = 1, numSum = 0, temp = num;
     while (temp != 0)
     {
