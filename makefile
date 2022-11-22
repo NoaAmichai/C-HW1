@@ -26,10 +26,10 @@ libclassrec.a: $(RECURSION)
 	 ranlib libclassrec.a
 
 libclassrec.so:$(RECURSION)
-	$(CC) -shared -o libclassrec.so $(RECURSION)
+	$(CC) -fPIC -shared -o libclassrec.so $(RECURSION)
 	
 libclassloops.so: $(LOOP)
-	$(CC) -shared -o libclassloops.so $(LOOP)
+	$(CC) -fPIC -shared -o libclassloops.so $(LOOP)
 
 #Create o files
 
