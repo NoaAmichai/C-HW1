@@ -26,10 +26,10 @@ libclassrec.a: $(RECURSION)
 	 ranlib libclassrec.a
 
 libclassrec.so:$(RECURSION)
-	$(CC) -fPIC -shared -o libclassrec.so $(RECURSION)
+	$(CC)  -shared -o libclassrec.so $(RECURSION)
 	
 libclassloops.so: $(LOOP)
-	$(CC) -fPIC -shared -o libclassloops.so $(LOOP)
+	$(CC)  -shared -o libclassloops.so $(LOOP)
 
 #Create o files
 
@@ -37,13 +37,13 @@ $(MAIN_O): main.c $(NUM_H)
 	$(CC) $(FLAGS) -c main.c
 
 basicClassification.o: basicClassification.c $(NUM_H)
-	$(CC) $(FLAGS) -c basicClassification.c
+	$(CC) $(FLAGS) -fPIC -c basicClassification.c
 
 advancedClassificationLoop.o: advancedClassificationLoop.c $(NUM_H)
-	$(CC) $(FLAGS) -c advancedClassificationLoop.c
+	$(CC) $(FLAGS) -fPIC -c advancedClassificationLoop.c
 
 advancedClassificationRecursion.o: advancedClassificationRecursion.c $(NUM_H)
-	$(CC) $(FLAGS) -c advancedClassificationRecursion.c
+	$(CC) $(FLAGS) -fPIC -c advancedClassificationRecursion.c
 
 #Create mains
 mains: $(MAIN_O) libclassrec.a
