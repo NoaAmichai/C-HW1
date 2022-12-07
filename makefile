@@ -37,7 +37,7 @@ $(MAIN_O): main.c $(NUM_H)
 	$(CC) $(FLAGS) -c main.c
 
 basicClassification.o: basicClassification.c $(NUM_H)
-	$(CC) $(FLAGS) -fPIC -c basicClassification.c
+	$(CC) $(FLAGS) -fPIC -c basicClassification.c 
 
 advancedClassificationLoop.o: advancedClassificationLoop.c $(NUM_H)
 	$(CC) $(FLAGS) -fPIC -c advancedClassificationLoop.c

@@ -1,6 +1,30 @@
 #include <stdio.h>
 #include "NumClass.h"
 
+ 
+ double sqrt(int number){
+
+    float temp, sqrt;
+
+    sqrt = number / 2;
+    temp = 0;
+
+    // Iterate until sqrt is different of temp, that is updated on the loop
+    while(sqrt != temp){
+        // initially 0, is updated with the initial value of 128
+        // (on second iteration = 65)
+        // and so on
+        temp = sqrt;
+
+        // Then, replace values (256 / 128 + 128 ) / 2 = 65
+        // (on second iteration 34.46923076923077)
+        // and so on
+        sqrt = ( number/temp + temp) / 2;
+    }
+    return sqrt;
+
+ }
+
 int isPrime(int num)
 {
     if (num < 1)
@@ -9,7 +33,7 @@ int isPrime(int num)
     }
     else
     {
-        for (int i = 2; i <= (num/2); i++)
+        for (int i = 2; i <= sqrt(num); i++)
         {
             if (num % i == 0)
             {
@@ -19,6 +43,7 @@ int isPrime(int num)
         return 1;
     }
 }
+
 
 int isStrong(int num)
 {
